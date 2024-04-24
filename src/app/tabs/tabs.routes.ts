@@ -7,30 +7,50 @@ export const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'welcome',
         loadComponent: () =>
-          import('../tab1/tab1.page').then((m) => m.Tab1Page),
+          import('../welcome/welcome.page').then((m) => m.WelcomePage),
       },
       {
-        path: 'tab2',
+        path: 'login',
         loadComponent: () =>
-          import('../tab2/tab2.page').then((m) => m.Tab2Page),
+          import('../login/login.page').then((m) => m.LoginPage),
       },
       {
-        path: 'tab3',
+        path: 'register',
         loadComponent: () =>
-          import('../tab3/tab3.page').then((m) => m.Tab3Page),
+          import('../register/register.page').then((m) => m.RegisterPage),
+      },
+      {
+        path: 'home',
+        loadComponent: () =>
+          import('../home/home.page').then((m) => m.HomePage),
+      },
+      {
+        path: 'database',
+        loadComponent: () =>
+          import('../database/database.page').then((m) => m.DatabasePage),
+      },
+      {
+        path: 'map',
+        loadComponent: () =>
+          import('../map/map.page').then((m) => m.MapPage),
+      },
+      {
+        path: 'reminders',
+        loadComponent: () =>
+          import('../reminders/reminders.page').then((m) => m.RemindersPage),
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/home',
         pathMatch: 'full',
       },
     ],
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/home',
     pathMatch: 'full',
   },
 ];

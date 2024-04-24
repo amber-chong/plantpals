@@ -1,20 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { IonicModule } from '@ionic/angular';
+import { Router } from '@angular/router';
+import { ModalController } from '@ionic/angular/standalone'
+import { WelcomePage } from '../welcome/welcome.page';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
-})
+  imports: [CommonModule, FormsModule, IonicModule],})
 export class HomePage implements OnInit {
 
-  constructor() { }
+  constructor(private modalController:ModalController) { }
 
   ngOnInit() {
+    this.welcome();
   }
 
+  async welcome() {
+    const modal = await this.modalController.create({
+      component: WelcomePage
+    });
+    return await modal.present();
+  }
 }

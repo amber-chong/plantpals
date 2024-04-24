@@ -1,13 +1,14 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>welcome</ion-title>
+    <ion-title>Welcome</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">welcome</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <img src="../../assets/plantpals1.PNG" alt="Logo" class="logo">
+
+  <div class="buttons">
+    <ion-button expand="block" (click)="login()">Login</ion-button>
+    <ion-button expand="block" (click)="register()">Register</ion-button>
+  </div>
 </ion-content>
