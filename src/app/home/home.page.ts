@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { Router } from '@angular/router';
-import { ModalController } from '@ionic/angular/standalone'
+import { ModalController } from '@ionic/angular/standalone';
 import { WelcomePage } from '../welcome/welcome.page';
 
 @Component({
@@ -11,19 +11,25 @@ import { WelcomePage } from '../welcome/welcome.page';
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, IonicModule],})
-export class HomePage implements OnInit {
+  imports: [CommonModule, FormsModule, IonicModule],
+})
 
-  constructor(private modalController:ModalController) { }
+export class HomePage implements OnInit {
+  constructor(private modalController: ModalController, private router: Router) {}
 
   ngOnInit() {
-    this.welcome();
+    //this.welcome();   //shows welcome modal
   }
 
   async welcome() {
     const modal = await this.modalController.create({
-      component: WelcomePage
+      component: WelcomePage,
     });
     return await modal.present();
+  }
+
+  databaseClick() {
+    let database = '/database'
+    this.router.navigateByUrl(database)
   }
 }
