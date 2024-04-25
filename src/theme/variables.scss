@@ -1,2 +1,12 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+@font-face {
+    font-family: 'My Custom Font';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../assets/fonts/Daydream/Daydream.ttf');
+}
+
+:root {
+    --ion-font-family: 'My Custom Font';
+}

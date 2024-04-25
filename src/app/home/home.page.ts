@@ -18,7 +18,7 @@ export class HomePage implements OnInit {
   constructor(private modalController: ModalController, private router: Router) {}
 
   ngOnInit() {
-    //this.welcome();   //shows welcome modal
+    this.welcome();   //shows welcome modal
   }
 
   async welcome() {

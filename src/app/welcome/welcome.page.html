@@ -1,17 +1,14 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Welcome</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <img src="../../assets/plantpals1.PNG" alt="Logo" class="logo" />
+  <img src="../../assets/plantpals1.PNG" alt="Logo" class="logo" width="75%"/>
 
   <div class="buttons">
-    <ion-button expand="block" (click)="login()">Login</ion-button>
-    <ion-button expand="block" (click)="register()">Register</ion-button>
+    <img src="../assets/loginButton.png" (click)="login()">
+    <img src="../assets/registerButton.png" (click)="register()" class="register">
   </div>
-  <ion-button shape="round" href="https://github.com/amber-chong/plantpals">
-    <ion-icon slot="icon-only" name="logo-github"></ion-icon>
+
+  <div class="git">
+  <ion-button fill="clear" href="https://github.com/amber-chong/plantpals">
+    <img src="../assets/github.png" width="15%">
   </ion-button>
+</div>
 </ion-content>

@@ -1,0 +1,24 @@
+* {
+  --ion-background-color: #3d2200;
+}
+
+img {
+    display:block;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+ion-item {
+  --background: none;
+  --color: #8c7c5c;
+  background-image: url("../../assets/button (3).png");
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 25px;
+  text-align: center;
+}
+
+.sc-ion-input-md-h {
+    --padding-top: 10px;
+    --padding-start: 10px;
+}
