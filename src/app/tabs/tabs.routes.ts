@@ -42,6 +42,11 @@ export const routes: Routes = [
           import('../reminders/reminders.page').then((m) => m.RemindersPage),
       },
       {
+        path: 'individual',
+        loadComponent: () =>
+          import('../individual/individual.page').then((m) => m.IndividualPage),
+      },
+      {
         path: '',
         redirectTo: '/tabs/home',
         pathMatch: 'full',

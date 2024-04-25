@@ -5,10 +5,13 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <img src="../../assets/plantpals1.PNG" alt="Logo" class="logo">
+  <img src="../../assets/plantpals1.PNG" alt="Logo" class="logo" />
 
   <div class="buttons">
     <ion-button expand="block" (click)="login()">Login</ion-button>
     <ion-button expand="block" (click)="register()">Register</ion-button>
   </div>
+  <ion-button shape="round" href="https://github.com/amber-chong/plantpals">
+    <ion-icon slot="icon-only" name="logo-github"></ion-icon>
+  </ion-button>
 </ion-content>

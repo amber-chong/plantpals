@@ -1,20 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { IonicModule } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-register',
+  selector: 'app-login',
   templateUrl: './register.page.html',
   styleUrls: ['./register.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [CommonModule, FormsModule, IonicModule],
 })
-export class RegisterPage implements OnInit {
+export class RegisterPage {
+  username: string = '';
+  password: string = '';
+  email: string = '';
+  agreeTerms: boolean = false;
 
-  constructor() { }
+  constructor(
+    private modalController: ModalController,
+    private router: Router
+  ) {}
 
-  ngOnInit() {
+  loginButton() {
+    if (this.username && this.password && this.email && this.agreeTerms) {
+      this.modalController.dismiss();
+      this.router.navigateByUrl('tabs/home');
+    } else {
+      console.log('Please fill in the respective fields.');
+    }
   }
-
 }

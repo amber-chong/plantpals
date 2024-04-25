@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular/standalone'
 import { LoginPage } from '../login/login.page';
 import { RegisterPage } from '../register/register.page';
+import { addIcons } from 'ionicons';
+import { logoGithub } from 'ionicons/icons';
 
 @Component({
   selector: 'app-welcome',
@@ -16,7 +18,9 @@ import { RegisterPage } from '../register/register.page';
 })
 export class WelcomePage implements OnInit {
 
-  constructor(private router: Router, private modalController:ModalController) { }
+  constructor(private router: Router, private modalController:ModalController) {
+    addIcons({logoGithub})
+  }
 
   ngOnInit() {
   }
