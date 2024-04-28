@@ -18,14 +18,15 @@
     text-align: center;
   }
 
-  .sc-ion-input-md-h {
+ion-input  {
       --padding-top: 15px;
       --padding-start: 10px;
   }
 
   ion-checkbox {
     --checkbox-background-checked: #8c7c5c;
-    padding: 15px;
+    padding: 30px;
+    padding-top: 20px;
     font-size: 9px;
     color: #8c7c5c
   }

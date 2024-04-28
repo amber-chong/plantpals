@@ -18,7 +18,11 @@ ion-item {
   text-align: center;
 }
 
-.sc-ion-input-md-h {
-    --padding-top: 10px;
+ion-button {
+  padding: 20px;
+}
+
+ion-input {
+    --padding-top: 20px;
     --padding-start: 10px;
 }
