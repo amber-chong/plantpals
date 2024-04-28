@@ -47,6 +47,9 @@ export class DatabasePage implements OnInit {
     });
   
     modal.onDidDismiss().then((retval) => {
+      const { plantName, plantSeason } = retval.data;
+      this.plants[index].plantName = plantName;
+      this.plants[index].plantSeason = plantSeason;
     });
   
     return await modal.present();
