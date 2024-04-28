@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { ModalController } from '@ionic/angular/standalone';
-import { Storage } from '@ionic/storage';
 import { IndividualPage } from '../individual/individual.page';
 
 @Component({
@@ -11,13 +10,55 @@ import { IndividualPage } from '../individual/individual.page';
   templateUrl: './database.page.html',
   styleUrls: ['./database.page.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, IonicModule]
+  imports: [CommonModule, FormsModule, IonicModule],
 })
 export class DatabasePage implements OnInit {
-  constructor(private modalController: ModalController, private storage: Storage) {}
+  plantName = '';
+  plantSeason = '';
+  plants = [{ plantName: 'strawberry', plantSeason: 'summer' }];
 
-  async ngOnInit() {
-    await this.storage.create();
+  constructor(private modalController: ModalController) {}
+
+  ngOnInit() {}
+
+  async addPlant() {
+    const modal = await this.modalController.create({
+      component: IndividualPage,
+      componentProps: {
+        plantName: this.plantName,
+        plantSeason: this.plantSeason,
+      },
+    });
+
+    modal.onDidDismiss().then((retval) => {
+      if (retval.data) {
+        const { plantName, plantSeason } = retval.data;
+        this.plants.push({ plantName, plantSeason });
+      }
+    });
+
+    return await modal.present();
+  }
+
+  async editPlant(index: number) {
+    const modal = await this.modalController.create({
+      component: IndividualPage,
+      componentProps: { plantName: this.plantName, plantSeason: this.plantSeason }
+    });
+  
+    modal.onDidDismiss().then((retval) => {
+    });
+  
+    return await modal.present();
+  }
+
+  deletePlant(index: number) {
+    if (index !== -1) {
+      this.plants.splice(index, 1);
+    }
   }
 }
 //https://forum.ionicframework.com/t/how-to-edit-the-content-of-the-page-using-a-modal-page/157788/2
+/*
+
+*/
