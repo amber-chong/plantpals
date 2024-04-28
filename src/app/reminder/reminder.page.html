@@ -1,0 +1,19 @@
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Reminder</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-item>
+    <ion-label position="stacked">Reminder Text</ion-label>
+    <ion-input type="text" maxlength="25" [(ngModel)]="newReminder.text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Reminder Date & Time</ion-label>
+    <ion-datetime presentation="date-time" [preferWheel]="true" display-format="YYYY-MM-DD hh:mm" [(ngModel)]="newReminder.datetime"></ion-datetime>
+  </ion-item>
+
+  <ion-button expand="block" (click)="closeReminder()">Save Reminder</ion-button>
+</ion-content>
