@@ -2,8 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { ModalController } from '@ionic/angular';
-import { Storage } from '@ionic/storage';
+import { NavParams, ModalController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-individual',
@@ -13,7 +13,17 @@ import { Storage } from '@ionic/storage';
   imports: [CommonModule, FormsModule, IonicModule]
 })
 export class IndividualPage implements OnInit {
-  constructor(private modalController: ModalController) { }
+  plantName = ""
+  plantSeason = ""
 
-  ngOnInit() {}
+  constructor(private modalController: ModalController, private navParams: NavParams) { }
+
+  ngOnInit() {
+    this.plantName = this.navParams.get('name')
+    this.plantSeason = this.navParams.get('season')
+  }
+
+  closeModal() {
+    this.modalController.dismiss({ plantName: this.plantName, plantSeason: this.plantSeason });
+  }
 }

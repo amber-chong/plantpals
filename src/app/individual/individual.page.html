@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-title>Add new plant</ion-title>
     <ion-buttons slot="end">
-      <ion-button>Cancel</ion-button>
+      <ion-button (click)="closeModal()">Cancel</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -11,16 +11,22 @@
   <img src="../assets/placeholderSquare.png">
   <ion-item>
     <ion-label position="floating">Name</ion-label>
-    <ion-input name="name"></ion-input>
+    <ion-input name="name" [(ngModel)]="plantName"></ion-input>
   </ion-item>
+
+<ion-item>
+    <ion-label position="floating">Ideal Growing Season</ion-label>
+    <ion-input name="season"  [(ngModel)]="plantSeason"></ion-input>
+  </ion-item>
+  <ion-button expand="block" (click)="closeModal()">Save</ion-button>
+</ion-content>
+
+<!--
   <ion-item>
     <ion-label position="floating">Scientific name</ion-label>
     <ion-input name="name"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-label position="floating">Ideal Growing Season</ion-label>
-    <ion-input name="name"></ion-input>
-  </ion-item>
   <ion-item>
     <ion-label position="floating">Type</ion-label>
     <ion-input name="name"></ion-input>
@@ -28,6 +34,4 @@
   <ion-item>
     <ion-label position="floating">Notes</ion-label>
     <ion-input name="name"></ion-input>
-  </ion-item>
-  <ion-button expand="block">Save</ion-button>
-</ion-content>
+  </ion-item>-->
