@@ -19,6 +19,8 @@ import { RegisterPage } from '../register/register.page';
 })
 export class HomePage implements OnInit {
   username = '';
+  welcomeExecuted = false;
+
   constructor(
     private navCtrl: NavController,
     private modalController: ModalController,
@@ -26,7 +28,11 @@ export class HomePage implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.welcome(); //shows welcome modal
+    //stops it from running every time
+    if (!this.welcomeExecuted) {
+      this.welcome();
+      this.welcomeExecuted = true;
+    }
   }
 
   //creates modal
@@ -43,9 +49,9 @@ export class HomePage implements OnInit {
 
     return await modal.present();
   }
-  databaseClick() {
+  reminderClick() {
     //sends user to database (separate page)
-    let database = '/database';
-    this.router.navigateByUrl(database);
+    let calendar = '/calendar';
+    this.router.navigateByUrl(calendar);
   }
 }

@@ -33,8 +33,7 @@ export const routes: Routes = [
       },
       {
         path: 'map',
-        loadComponent: () =>
-          import('../map/map.page').then((m) => m.MapPage),
+        loadComponent: () => import('../map/map.page').then((m) => m.MapPage),
       },
       {
         path: 'reminder',

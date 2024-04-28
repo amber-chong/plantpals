@@ -1,17 +1,12 @@
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Calendar</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
+  <h1>Calendar</h1>
   <ion-item>
     <ion-datetime displayFormat="DD/MM/YYYY"></ion-datetime>
   </ion-item>
 
-  <ion-button expand="block" color="primary" (click)="addReminder()"
-    >Add Reminder</ion-button
-  >
+  <div class="saveButton">
+    <img src="../../assets/reminder.png" (click)="addReminder()" />
+  </div>
 
   <ion-list>
     <!--loop for reminders-->

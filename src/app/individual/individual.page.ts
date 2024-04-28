@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { NavParams, ModalController } from '@ionic/angular';
+import { addIcons } from 'ionicons';
+import { close } from 'ionicons/icons';
 
 @Component({
   selector: 'app-individual',
@@ -18,7 +20,9 @@ export class IndividualPage implements OnInit {
   constructor(
     private modalController: ModalController,
     private navParams: NavParams
-  ) {}
+  ) {
+    addIcons({ close });
+  }
 
   ngOnInit() {
     this.plantName = this.navParams.get('name'); //logs name and season

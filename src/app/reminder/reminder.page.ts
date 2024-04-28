@@ -11,7 +11,6 @@ import { NavParams, ModalController } from '@ionic/angular';
   standalone: true,
   imports: [CommonModule, FormsModule, IonicModule],
 })
-
 export class ReminderPage implements OnInit {
   newReminder: { text: string; datetime: Date } = {
     text: '',
@@ -26,6 +25,6 @@ export class ReminderPage implements OnInit {
   ngOnInit() {}
 
   closeReminder() {
-    this.modalController.dismiss(this.newReminder);   //dismisses modal
+    this.modalController.dismiss(this.newReminder); //dismisses modal
   }
 }

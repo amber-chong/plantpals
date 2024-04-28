@@ -1,0 +1,31 @@
+* {
+  --ion-background-color: #e5d9c3;
+  color: #3d2200;
+}
+
+ion-label {
+  text-align: center;
+  padding-left: 50px;
+}
+
+ion-input {
+  text-align: center;
+  margin: 20px;
+}
+
+.placeholderImg {
+  width: 70%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 40px;
+  padding-bottom: 50px;
+}
+
+.saveButton {
+  width: 40%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 40px;
+}

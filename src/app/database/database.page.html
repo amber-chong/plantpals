@@ -1,29 +1,26 @@
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title>database</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
+  <h1>Database</h1>
   <ion-grid>
     <ion-row>
       <ion-col size="6">
         <ion-card (click)="addPlant()">
-          <img src="../assets/placeholderSquare.png" />
+          <img src="../assets/add.png" />
         </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
-  <ion-list>
-    <!--loop-->
-    <ion-item-sliding *ngFor="let plant of plants ; index as i">
-      <ion-item> {{ plant.plantName }} | {{ plant.plantSeason }}</ion-item>
-      <ion-item-options>
-        <ion-button ion-button (click)="editPlant(i)">Edit</ion-button>
-        <ion-button ion-button color="danger" (click)="deletePlant(i)"
-          >Delete</ion-button
-        >
-      </ion-item-options>
-    </ion-item-sliding>
-  </ion-list>
+  <div class="databaseList">
+    <ion-list>
+      <!--loop-->
+      <ion-item-sliding *ngFor="let plant of plants ; index as i">
+        <ion-item> {{ plant.plantName }} | {{ plant.plantSeason }}</ion-item>
+        <ion-item-options>
+          <ion-button ion-button (click)="editPlant(i)">Edit</ion-button>
+          <ion-button ion-button color="danger" (click)="deletePlant(i)"
+            >Delete</ion-button
+          >
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </div>
 </ion-content>

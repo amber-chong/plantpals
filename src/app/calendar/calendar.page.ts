@@ -28,7 +28,7 @@ export class CalendarPage implements OnInit {
       text: '';
       datetime: new Date();
     }
-      //makes the modal
+    //makes the modal
     const modal = await this.modalController.create({
       component: ReminderPage,
       componentProps: {
@@ -36,7 +36,7 @@ export class CalendarPage implements OnInit {
       },
     });
 
-          //pushes data when modal is dismissed
+    //pushes data when modal is dismissed
     modal.onDidDismiss().then((data) => {
       if (data.data) {
         this.reminders.push(data.data);

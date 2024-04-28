@@ -1,14 +1,10 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Add new plant</ion-title>
-    <ion-buttons slot="end">
-      <ion-button (click)="closeModal()">Cancel</ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  <img src="../assets/placeholderSquare.png" />
+  <ion-item>
+    <ion-icon name="close" (click)="closeModal()" slot="end"></ion-icon>
+    <ion-label>New plant</ion-label>
+  </ion-item>
+
+  <img src="../assets/placeholderSquare.png" class="placeholderImg" />
   <ion-item>
     <ion-input
       name="name"
@@ -21,10 +17,12 @@
     <ion-input
       name="season"
       [(ngModel)]="plantSeason"
-      placeholder="Plant's Ideal Growing Season"
+      placeholder="Ideal Growing Season"
     ></ion-input>
   </ion-item>
-  <ion-button expand="block" (click)="closeModal()">Save</ion-button>
+  <div class="saveButton">
+    <img src="../../assets/save.png" (click)="closeModal()" />
+  </div>
 </ion-content>
 
 <!--
