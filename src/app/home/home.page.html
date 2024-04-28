@@ -1,12 +1,14 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
-      <ion-title> {{ username }} 's garden</ion-title>
+    <ion-title>Your garden</ion-title>
+    <!--{{ username }}-->
   </ion-header>
   <a href="/tabs/database">
-  <img src="../assets/placeholderRect.png" (click)="databaseClick"> <!-- for modal(click)="databaseClick()"--> </a>
-  <hr>
+    <img src="../assets/placeholderRect.png" (click)="databaseClick" />
+    <!-- for modal(click)="databaseClick()"-->
+  </a>
+  <hr />
   <ion-text>plants list here/database</ion-text>
-  <hr>
+  <hr />
   <ion-text>reminders here</ion-text>
 </ion-content>
-

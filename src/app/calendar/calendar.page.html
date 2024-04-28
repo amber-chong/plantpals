@@ -9,12 +9,16 @@
     <ion-datetime displayFormat="DD/MM/YYYY"></ion-datetime>
   </ion-item>
 
-  <ion-button expand="block" color="primary" (click)="addReminder()">Add Reminder</ion-button>
+  <ion-button expand="block" color="primary" (click)="addReminder()"
+    >Add Reminder</ion-button
+  >
 
   <ion-list>
-    <ion-item *ngFor="let reminder of reminders">   <!--loop for reminders-->
+    <!--loop for reminders-->
+    <ion-item *ngFor="let reminder of reminders">
+      <!--formatting-->
       <ion-label>{{ reminder.text }}</ion-label>
-      <ion-label>{{ reminder.datetime | date:'YYYY-MM-DD | hh:mm' }}</ion-label>   <!--formatting-->
+      <ion-label>{{ reminder.datetime | date:'YYYY-MM-DD | hh:mm' }}</ion-label>
     </ion-item>
   </ion-list>
 </ion-content>

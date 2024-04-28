@@ -10,33 +10,39 @@ import { ReminderPage } from '../reminder/reminder.page';
   templateUrl: './calendar.page.html',
   styleUrls: ['./calendar.page.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, IonicModule]
+  imports: [CommonModule, FormsModule, IonicModule],
 })
 export class CalendarPage implements OnInit {
-  reminders: { text: string, datetime: Date }[] = [];     //creates a string
-  newReminder: { text: string, datetime: Date } = { text: '', datetime: new Date() };     //initialises date
+  reminders: { text: string; datetime: Date }[] = []; //creates a string
+  newReminder: { text: string; datetime: Date } = {
+    text: '',
+    datetime: new Date(),
+  }; //initialises date
 
-  constructor(private modalController: ModalController) { }
+  constructor(private modalController: ModalController) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   async addReminder() {
-    newReminder: { text: ''; datetime: new Date() };
-  
-    const modal = await this.modalController.create({   //makes the modal
+    newReminder: {
+      text: '';
+      datetime: new Date();
+    }
+      //makes the modal
+    const modal = await this.modalController.create({
       component: ReminderPage,
       componentProps: {
-        newReminder: this.newReminder
-      }
+        newReminder: this.newReminder,
+      },
     });
-  
-    modal.onDidDismiss().then((data) => {   //pushes data when modal is dismissed
+
+          //pushes data when modal is dismissed
+    modal.onDidDismiss().then((data) => {
       if (data.data) {
         this.reminders.push(data.data);
       }
     });
-  
+
     return await modal.present();
   }
 }

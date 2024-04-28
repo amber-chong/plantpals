@@ -8,15 +8,21 @@
 </ion-header>
 
 <ion-content>
-  <img src="../assets/placeholderSquare.png">
+  <img src="../assets/placeholderSquare.png" />
   <ion-item>
-    <ion-label position="floating">Name</ion-label>
-    <ion-input name="name" [(ngModel)]="plantName"></ion-input>
+    <ion-input
+      name="name"
+      [(ngModel)]="plantName"
+      placeholder="Plant Name"
+    ></ion-input>
   </ion-item>
 
-<ion-item>
-    <ion-label position="floating">Ideal Growing Season</ion-label>
-    <ion-input name="season"  [(ngModel)]="plantSeason"></ion-input>
+  <ion-item>
+    <ion-input
+      name="season"
+      [(ngModel)]="plantSeason"
+      placeholder="Plant's Ideal Growing Season"
+    ></ion-input>
   </ion-item>
   <ion-button expand="block" (click)="closeModal()">Save</ion-button>
 </ion-content>

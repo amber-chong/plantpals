@@ -1,16 +1,25 @@
-
-<ion-header [translucent]="true">
-</ion-header>
+<ion-header [translucent]="true"> </ion-header>
 
 <ion-content>
-  <img src="../../assets/plantpals1.PNG" alt="Logo" class="logo" width="75%"/>
+  <img src="../../assets/plantpals1.PNG" alt="Logo" class="logo" width="75%" />
   <ion-item lines="none">
-    <ion-input type="text" [(ngModel)]="username" name="username" placeholder="username"></ion-input>
+    <ion-input
+      type="text"
+      [(ngModel)]="username"
+      name="username"
+      placeholder="username"
+    ></ion-input>
   </ion-item>
 
   <ion-item lines="none">
-    <ion-input type="password" [(ngModel)]="password" placeholder="password"></ion-input>
+    <ion-input
+      type="password"
+      [(ngModel)]="password"
+      placeholder="password"
+    ></ion-input>
   </ion-item>
 
-  <ion-button expand="block" color="none" (click)="loginButton()">Login</ion-button>
+  <ion-button expand="block" color="none" (click)="loginButton()"
+    >Login</ion-button
+  >
 </ion-content>

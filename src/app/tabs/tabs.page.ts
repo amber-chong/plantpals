@@ -2,7 +2,7 @@ import { Component, EnvironmentInjector, inject, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { addIcons } from 'ionicons';
-import { triangle, ellipse, square } from 'ionicons/icons';
+import {  calendar, home, map } from 'ionicons/icons';
 
 @Component({
   selector: 'app-tabs',
@@ -15,6 +15,6 @@ export class TabsPage {
   public environmentInjector = inject(EnvironmentInjector);
 
   constructor() {
-    addIcons({ triangle, ellipse, square });
+    addIcons({ home, map, calendar });
   }
 }

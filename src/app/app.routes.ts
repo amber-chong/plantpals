@@ -26,8 +26,8 @@ export const routes: Routes = [
     loadComponent: () => import('./map/map.page').then( m => m.MapPage)
   },
   {
-    path: 'reminders',
-    loadComponent: () => import('./reminders/reminders.page').then( m => m.RemindersPage)
+    path: 'reminder',
+    loadComponent: () => import('./reminder/reminder.page').then( m => m.ReminderPage)
   },
   {
     path: 'individual',
@@ -40,5 +40,9 @@ export const routes: Routes = [
   {
     path: 'register',
     loadComponent: () => import('./register/register.page').then( m => m.RegisterPage)
+  },
+  {
+    path: 'calendar',
+    loadComponent: () => import('./calendar/calendar.page').then( m => m.CalendarPage)
   },
 ];

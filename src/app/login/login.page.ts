@@ -5,8 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { ModalController, NavParams } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { WelcomePage } from '../welcome/welcome.page';
-import { NavController } from '@ionic/angular'
-
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +18,12 @@ export class LoginPage {
   username: string = '';
   password: string = '';
 
-  constructor(private navParams: NavParams, private modalController: ModalController, private router: Router, private navCtrl: NavController) {}
+  constructor(
+    private navParams: NavParams,
+    private modalController: ModalController,
+    private router: Router,
+    private navCtrl: NavController
+  ) {}
 
   async loginButton() {
     if (this.username && this.password) {
@@ -32,11 +36,10 @@ export class LoginPage {
   }
 
   onDismiss() {
-    // Assuming `this.username` contains the username
     this.navCtrl.navigateForward('/home', {
-        state: {
-            username: this.username
-        }
-    })
+      state: {
+        username: this.username,
+      },
+    });
   }
 }

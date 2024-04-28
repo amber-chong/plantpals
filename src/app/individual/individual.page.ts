@@ -4,26 +4,32 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { NavParams, ModalController } from '@ionic/angular';
 
-
 @Component({
   selector: 'app-individual',
   templateUrl: './individual.page.html',
   styleUrls: ['./individual.page.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, IonicModule]
+  imports: [CommonModule, FormsModule, IonicModule],
 })
 export class IndividualPage implements OnInit {
-  plantName = ""
-  plantSeason = ""
+  plantName = '';
+  plantSeason = '';
 
-  constructor(private modalController: ModalController, private navParams: NavParams) { }
+  constructor(
+    private modalController: ModalController,
+    private navParams: NavParams
+  ) {}
 
   ngOnInit() {
-    this.plantName = this.navParams.get('name')
-    this.plantSeason = this.navParams.get('season')
+    this.plantName = this.navParams.get('name'); //logs name and season
+    this.plantSeason = this.navParams.get('season');
   }
 
+  //sends info to database when modal closes
   closeModal() {
-    this.modalController.dismiss({ plantName: this.plantName, plantSeason: this.plantSeason });
+    this.modalController.dismiss({
+      plantName: this.plantName,
+      plantSeason: this.plantSeason,
+    });
   }
 }

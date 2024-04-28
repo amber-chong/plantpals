@@ -37,9 +37,14 @@ export const routes: Routes = [
           import('../map/map.page').then((m) => m.MapPage),
       },
       {
-        path: 'reminders',
+        path: 'reminder',
         loadComponent: () =>
-          import('../reminders/reminders.page').then((m) => m.RemindersPage),
+          import('../reminder/reminder.page').then((m) => m.ReminderPage),
+      },
+      {
+        path: 'calendar',
+        loadComponent: () =>
+          import('../calendar/calendar.page').then((m) => m.CalendarPage),
       },
       {
         path: 'individual',

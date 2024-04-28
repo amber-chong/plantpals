@@ -16,7 +16,7 @@ export class RegisterPage {
   username: string = '';
   password: string = '';
   email: string = '';
-  agreeTerms: boolean = false;
+  agreeTerms: boolean = false; //default is false for t&cs
 
   constructor(
     private modalController: ModalController,
@@ -24,6 +24,7 @@ export class RegisterPage {
   ) {}
 
   loginButton() {
+    //if all these == true/filled, itll continue
     if (this.username && this.password && this.email && this.agreeTerms) {
       this.modalController.dismiss();
       this.router.navigateByUrl('tabs/home');
