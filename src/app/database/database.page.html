@@ -15,7 +15,7 @@
     </ion-row>
   </ion-grid>
     <ion-list>
-    <ion-item-sliding *ngFor="let plant of plants ; index as i">
+    <ion-item-sliding *ngFor="let plant of plants ; index as i">    <!--loop-->
       <ion-item> {{ plant.plantName }} | {{ plant.plantSeason }}</ion-item>
       <ion-item-options>
         <ion-button ion-button (click)="editPlant(i)">Edit</ion-button>
