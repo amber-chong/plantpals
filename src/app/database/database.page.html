@@ -11,10 +11,8 @@
       <ng-container *ngFor="let plant of plants; let i = index">
         <ion-col size="6">
           <ion-card (click)="openPlantModal(i)">
-            <ion-card-header>
-              <ion-card-title>{{ plant.plantName }}</ion-card-title>
-            </ion-card-header>
-            <ion-card-content> Season: {{ plant.plantSeason }} </ion-card-content>
+            <img src="../assets/placeholderSquare.png">
+            <ion-card-content>{{ plant.plantName }}</ion-card-content>
           </ion-card>
         </ion-col>
       </ng-container>

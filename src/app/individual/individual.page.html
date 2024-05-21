@@ -20,22 +20,25 @@
       placeholder="Ideal Growing Season"
     ></ion-input>
   </ion-item>
+
+  <ion-item>
+    <ion-input name="science" [(ngModel)]="scientificName" placeholder="Scientific Name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input name="type" [(ngModel)]="plantType" placeholder="Plant Type"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input name="notes" [(ngModel)]="plantNotes" placeholder="Notes"></ion-input>
+  </ion-item>
+
   <div class="saveButton">
     <img src="../../assets/save.png" (click)="closeModal()" />
   </div>
+  <div class="editDelete">
+    <button type="button">Delete</button>
+  </div>
 </ion-content>
 
-<!--
-  <ion-item>
-    <ion-label position="floating">Scientific name</ion-label>
-    <ion-input name="name"></ion-input>
-  </ion-item>
-  <ion-item>
-  <ion-item>
-    <ion-label position="floating">Type</ion-label>
-    <ion-input name="name"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">Notes</ion-label>
-    <ion-input name="name"></ion-input>
-  </ion-item>-->
+<!---->

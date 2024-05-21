@@ -16,6 +16,9 @@ import { close } from 'ionicons/icons';
 export class IndividualPage implements OnInit {
   plantName = '';
   plantSeason = '';
+  scientificName = '';
+  plantType = '';
+  plantNotes = '';
 
   constructor(
     private modalController: ModalController,
@@ -31,6 +34,9 @@ export class IndividualPage implements OnInit {
     this.modalController.dismiss({
       plantName: this.plantName,
       plantSeason: this.plantSeason,
+      scientificName: this.scientificName,
+      plantType: this.plantName,
+      plantNotes: this.plantNotes
     });
   }
   //sends info to database when modal closes
@@ -38,6 +44,17 @@ export class IndividualPage implements OnInit {
     this.modalController.dismiss({
       plantName: this.plantName,
       plantSeason: this.plantSeason,
+      scientificName: this.scientificName,
+      plantType: this.plantName,
+      plantNotes: this.plantNotes
     });
   }
+/*
+  async deletePlant(index: number) {
+    //deletes it
+    if (index !== -1) {
+      this.plants.splice(index, 1);
+      await this.storage.set('plants', this.plants);
+    }
+  }*/
 }

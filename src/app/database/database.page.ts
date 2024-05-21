@@ -17,7 +17,10 @@ import { Storage } from '@ionic/storage-angular'
 export class DatabasePage implements OnInit {
   plantName = ''; //blanks for later
   plantSeason = '';
-  plants = [{ plantName: 'strawberry', plantSeason: 'summer' }]; //temp string
+  scientificName = '';
+  plantType = '';
+  plantNotes = '';
+  plants = [{ plantName: 'strawberry', plantSeason: 'summer', scientificName: 'Fragaria', plantType: 'Berry', plantNotes: 'can overripe easily' }]; //temp string
 
   constructor(private modalController: ModalController, private storage: Storage) {
   }
@@ -34,6 +37,9 @@ export class DatabasePage implements OnInit {
       componentProps: {
         plantName: this.plantName,
         plantSeason: this.plantSeason,
+        scientificName: this.scientificName,
+        plantType: this.plantName,
+        plantNotes: this.plantNotes,
         isNew: true, // new plant (shows up blank)
       },
     });
@@ -41,8 +47,8 @@ export class DatabasePage implements OnInit {
     modal.onDidDismiss().then(async (retval) => {
       //sends data when modal closes
       if (retval.data) {
-        const { plantName, plantSeason } = retval.data;
-        this.plants.push({ plantName, plantSeason });
+        const { plantName, plantSeason, scientificName, plantType, plantNotes } = retval.data;
+        this.plants.push({ plantName, plantSeason, scientificName, plantType, plantNotes });
         await this.storage['set']('plants', this.plants);
       }
     });
@@ -58,6 +64,9 @@ export class DatabasePage implements OnInit {
       componentProps: {
         plantName: plant.plantName,
         plantSeason: plant.plantSeason,
+        scientificName: plant.scientificName,
+        plantType: plant.plantType,
+        plantNotes: plant.plantNotes,
         index: index,
         isNew: false, // created plant (shows with filled fields)
       },
@@ -65,12 +74,15 @@ export class DatabasePage implements OnInit {
 
     modal.onDidDismiss().then(async (retval) => {
       if (retval.data) {
-        const { plantName, plantSeason, isDeleted } = retval.data;
+        const { plantName, plantSeason, scientificName, plantType, plantNotes, isDeleted } = retval.data;
         if (isDeleted) {
           this.plants.splice(index, 1);
         } else {
           this.plants[index].plantName = plantName;
           this.plants[index].plantSeason = plantSeason;
+          this.plants[index].scientificName = scientificName;
+          this.plants[index].plantType = plantType;
+          this.plants[index].plantNotes = plantNotes;
         }
         await this.storage['set']('plants', this.plants);
       }
@@ -79,7 +91,7 @@ export class DatabasePage implements OnInit {
     return await modal.present();
   }
 
-  /*
+      /*
   async editPlant(index: number) {
     const plant = this.plants[index]; // Get the current plant details
     const modal = await this.modalController.create({
@@ -101,13 +113,5 @@ export class DatabasePage implements OnInit {
     });
 
     return await modal.present();
-  }
-
-  async deletePlant(index: number) {
-    //deletes it
-    if (index !== -1) {
-      this.plants.splice(index, 1);
-      await this.storage.set('plants', this.plants);
-    }
   }*/
 }
