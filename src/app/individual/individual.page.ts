@@ -25,10 +25,14 @@ export class IndividualPage implements OnInit {
   }
 
   ngOnInit() {
-    this.plantName = this.navParams.get('name'); //logs name and season
-    this.plantSeason = this.navParams.get('season');
   }
 
+  saveModal() {
+    this.modalController.dismiss({
+      plantName: this.plantName,
+      plantSeason: this.plantSeason,
+    });
+  }
   //sends info to database when modal closes
   closeModal() {
     this.modalController.dismiss({
