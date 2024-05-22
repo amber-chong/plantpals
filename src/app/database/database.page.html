@@ -7,20 +7,15 @@
           <img src="../assets/add.png" />
         </ion-card>
       </ion-col>
+      <!-- Loop through the plants and add them as separate columns -->
+      <ng-container *ngFor="let plant of plants; let i = index">
+        <ion-col size="6">
+          <ion-card (click)="openPlantModal(i)">
+            <img src="../assets/placeholderSquare.png">
+            <ion-card-content>{{ plant.plantName }}</ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ng-container>
     </ion-row>
   </ion-grid>
-  <div class="databaseList">
-    <ion-list>
-      <!--loop-->
-      <ion-item-sliding *ngFor="let plant of plants ; index as i">
-        <ion-item> {{ plant.plantName }} | {{ plant.plantSeason }}</ion-item>
-        <ion-item-options>
-          <ion-button ion-button (click)="editPlant(i)">Edit</ion-button>
-          <ion-button ion-button color="danger" (click)="deletePlant(i)"
-            >Delete</ion-button
-          >
-        </ion-item-options>
-      </ion-item-sliding>
-    </ion-list>
-  </div>
 </ion-content>

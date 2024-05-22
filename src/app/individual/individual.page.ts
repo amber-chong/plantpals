@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { NavParams, ModalController } from '@ionic/angular';
+import { ImagePicker } from '@awesome-cordova-plugins/image-picker';
+import { Storage } from '@ionic/storage';
+
 import { addIcons } from 'ionicons';
 import { close } from 'ionicons/icons';
 
@@ -16,24 +19,66 @@ import { close } from 'ionicons/icons';
 export class IndividualPage implements OnInit {
   plantName = '';
   plantSeason = '';
+  scientificName = '';
+  plantType = '';
+  plantNotes = '';
 
   constructor(
-    private modalController: ModalController,
-    private navParams: NavParams
-  ) {
+    private modalController: ModalController, private storage: Storage) {
     addIcons({ close });
   }
 
-  ngOnInit() {
-    this.plantName = this.navParams.get('name'); //logs name and season
-    this.plantSeason = this.navParams.get('season');
+  async ngOnInit() {
+    await this.storage.create();
   }
 
+  saveModal() {
+    this.modalController.dismiss({
+      plantName: this.plantName,
+      plantSeason: this.plantSeason,
+      scientificName: this.scientificName,
+      plantType: this.plantName,
+      plantNotes: this.plantNotes,
+    });
+  }
   //sends info to database when modal closes
   closeModal() {
     this.modalController.dismiss({
       plantName: this.plantName,
       plantSeason: this.plantSeason,
+      scientificName: this.scientificName,
+      plantType: this.plantName,
+      plantNotes: this.plantNotes,
     });
   }
 }
+/*
+
+
+  saveModal() {
+    this.modalController.dismiss({
+      plantName: this.plantName,
+      plantSeason: this.plantSeason,
+      scientificName: this.scientificName,
+      plantType: this.plantName,
+      plantNotes: this.plantNotes
+    });
+  }
+  //sends info to database when modal closes
+  closeModal() {
+    this.modalController.dismiss({
+      plantName: this.plantName,
+      plantSeason: this.plantSeason,
+      scientificName: this.scientificName,
+      plantType: this.plantName,
+      plantNotes: this.plantNotes
+    });
+  }
+  
+  async deletePlant(index: number) {
+    //deletes it
+    if (index !== -1) {
+      this.plants.splice(index, 1);
+      await this.storage.set('plants', this.plants);
+    }
+  }*/

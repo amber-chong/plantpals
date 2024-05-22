@@ -4,13 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular/standalone'
+import { IonicStorageModule } from '@ionic/storage-angular';
 
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   standalone: true,
-  imports: [CommonModule, IonicModule, FormsModule],
+  imports: [CommonModule, IonicModule, FormsModule, IonicStorageModule],
 })
 
 export class AppComponent implements OnInit{
