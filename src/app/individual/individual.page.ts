@@ -38,7 +38,7 @@ export class IndividualPage implements OnInit {
       plantSeason: this.plantSeason,
       scientificName: this.scientificName,
       plantType: this.plantName,
-      plantNotes: this.plantNotes,
+      plantNotes: this.plantNotes
     });
   }
   //sends info to database when modal closes
@@ -48,9 +48,17 @@ export class IndividualPage implements OnInit {
       plantSeason: this.plantSeason,
       scientificName: this.scientificName,
       plantType: this.plantName,
-      plantNotes: this.plantNotes,
+      plantNotes: this.plantNotes
     });
   }
+/*
+  async deletePlant(index: number) {
+    //deletes it
+    if (index !== -1) {
+      this.plants.splice(index, 1);
+      await this.storage.set('plants', this.plants);
+    }
+  }*/
 }
 /*
 

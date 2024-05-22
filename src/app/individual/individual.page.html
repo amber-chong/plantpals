@@ -21,36 +21,16 @@
   </ion-item>
 
   <ion-item>
-    <ion-input
-      name="science"
-      [(ngModel)]="scientificName"
-      placeholder="Scientific Name"
-    ></ion-input>
+    <ion-input name="science" [(ngModel)]="scientificName" placeholder="Scientific Name"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-input
-      name="type"
-      [(ngModel)]="plantType"
-      placeholder="Plant Type"
-    ></ion-input>
+    <ion-input name="type" [(ngModel)]="plantType" placeholder="Plant Type"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-input
-      name="notes"
-      [(ngModel)]="plantNotes"
-      placeholder="Notes"
-    ></ion-input>
+    <ion-input name="notes" [(ngModel)]="plantNotes" placeholder="Notes"></ion-input>
   </ion-item>
-<!--
-  <ion-item>
-    <ion-button (click)="pickImage()">Pick Image</ion-button>
-  </ion-item>
-
-  <ion-item *ngIf="plantImage">
-    <img [src]="plantImage" style="width: 100%" />
-  </ion-item>-->
 
   <div class="saveButton">
     <img src="../../assets/save.png" (click)="closeModal()" />
@@ -59,3 +39,5 @@
     <button type="button">Delete</button>
   </div>
 </ion-content>
+
+<!---->
