@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { ModalController } from '@ionic/angular';
 import { ImagePicker } from '@awesome-cordova-plugins/image-picker/ngx';
-import { Storage } from '@ionic/storage';
 
 //==========icons============
 import { addIcons } from 'ionicons';
@@ -32,24 +31,15 @@ export class IndividualPage implements OnInit {
 
   constructor(
     private modalController: ModalController,
-    private storage: Storage,
     private imagePicker: ImagePicker
   ) {
     addIcons({ close });
   }
 
-  async ngOnInit() {
-    await this.storage.create();
+  async ngOnInit() {}
 
-    //loads image
-    if (this.index !== null) {
-      this.plantImage =
-        (await this.storage.get(`plantImage_${this.index}`)) || ''; //either loads image or a string
-    }
-  }
+    //=============
 
-//=====================
-  //janky way of letting files be loaded
   imageSelected(files: FileList | null) {
     if (files && files.length > 0) {
       const file = files[0];
@@ -58,18 +48,12 @@ export class IndividualPage implements OnInit {
       fileReader.onload = () => {
         if (typeof fileReader.result === 'string') {
           this.plantImage = fileReader.result;
-          if (this.index !== null) {
-            //if its not nothing
-            this.storage.set(`plantImage_${this.index}`, this.plantImage); //different images
-          }
         }
       };
-      fileReader.readAsDataURL(file); // base 64 string yay
+      fileReader.readAsDataURL(file);
     }
   }
 
-//=====================
-  //will be copied and pasted between individual, database and maps, no im not redoing it
   saveModal() {
     this.modalController.dismiss({
       plantName: this.plantName,
@@ -83,26 +67,11 @@ export class IndividualPage implements OnInit {
     });
   }
 
-//=====================
   closeModal() {
-    this.modalController.dismiss({
-      plantName: this.plantName,
-      plantSeason: this.plantSeason,
-      scientificName: this.scientificName,
-      plantType: this.plantType,
-      plantNotes: this.plantNotes,
-      plantImage: this.plantImage,
-      x: this.x,
-      y: this.y,
-    });
+    this.modalController.dismiss();
   }
-  
-//=====================
-  //deletes it from the database, nothing fancy
+
   async deletePlant() {
-    if (this.index !== null) {
-      await this.storage.remove(`plantImage_${this.index}`);
-    }
     this.modalController.dismiss({
       isDeleted: true,
     });
