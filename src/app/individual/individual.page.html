@@ -3,41 +3,27 @@
     <ion-icon name="close" (click)="closeModal()" slot="end"></ion-icon>
     <ion-label>New plant</ion-label>
   </ion-item>
-
+  <input #fileInput type="file" accept="image/*" (change)="imageSelected(fileInput.files)">
+  <img [src]="plantImage">
   <ion-item>
-    <ion-input
-      name="name"
-      [(ngModel)]="plantName"
-      placeholder="Plant Name"
-    ></ion-input>
+    <ion-input name="name" [(ngModel)]="plantName" placeholder="Plant Name"></ion-input>
   </ion-item>
-
   <ion-item>
-    <ion-input
-      name="season"
-      [(ngModel)]="plantSeason"
-      placeholder="Ideal Growing Season"
-    ></ion-input>
+    <ion-input name="season" [(ngModel)]="plantSeason" placeholder="Ideal Growing Season"></ion-input>
   </ion-item>
-
   <ion-item>
     <ion-input name="science" [(ngModel)]="scientificName" placeholder="Scientific Name"></ion-input>
   </ion-item>
-
   <ion-item>
     <ion-input name="type" [(ngModel)]="plantType" placeholder="Plant Type"></ion-input>
   </ion-item>
-
   <ion-item>
     <ion-input name="notes" [(ngModel)]="plantNotes" placeholder="Notes"></ion-input>
   </ion-item>
-
   <div class="saveButton">
-    <img src="../../assets/save.png" (click)="closeModal()" />
+    <img src="../../assets/save.png" (click)="saveModal()" />
   </div>
   <div class="editDelete">
-    <button type="button">Delete</button>
+    <button type="button" (click)="deletePlant()">Delete</button>
   </div>
 </ion-content>
-
-<!---->

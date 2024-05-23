@@ -12,6 +12,7 @@ import { IonicStorageModule } from '@ionic/storage-angular';
   templateUrl: 'app.component.html',
   standalone: true,
   imports: [CommonModule, IonicModule, FormsModule, IonicStorageModule],
+
 })
 
 export class AppComponent implements OnInit{

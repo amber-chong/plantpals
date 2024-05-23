@@ -7,11 +7,10 @@
           <img src="../assets/add.png" />
         </ion-card>
       </ion-col>
-      <!-- Loop through the plants and add them as separate columns -->
       <ng-container *ngFor="let plant of plants; let i = index">
         <ion-col size="6">
           <ion-card (click)="openPlantModal(i)">
-            <img src="../assets/placeholderSquare.png">
+            <img [src]="plant.plantImage || '../assets/placeholderSquare.png'">
             <ion-card-content>{{ plant.plantName }}</ion-card-content>
           </ion-card>
         </ion-col>

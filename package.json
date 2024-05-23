@@ -22,16 +22,21 @@
     "@angular/platform-browser": "^17.0.2",
     "@angular/platform-browser-dynamic": "^17.0.2",
     "@angular/router": "^17.0.2",
+    "@awesome-cordova-plugins/core": "^6.7.0",
     "@awesome-cordova-plugins/file": "^6.7.0",
     "@awesome-cordova-plugins/image-picker": "^6.7.0",
+    "@capacitor/android": "^6.0.0",
     "@capacitor/app": "6.0.0",
-    "@capacitor/core": "6.0.0",
+    "@capacitor/core": "^6.0.0",
     "@capacitor/haptics": "6.0.0",
+    "@capacitor/ios": "^6.0.0",
     "@capacitor/keyboard": "6.0.0",
     "@capacitor/status-bar": "6.0.0",
     "@ionic/angular": "^8.0.0",
     "@ionic/storage": "^4.0.0",
     "@ionic/storage-angular": "^4.0.0",
+    "@types/google.maps": "^3.55.9",
+    "chart.js": "^4.4.3",
     "ionicons": "^7.2.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
@@ -47,11 +52,12 @@
     "@angular/cli": "^17.0.0",
     "@angular/compiler-cli": "^17.0.2",
     "@angular/language-service": "^17.0.2",
-    "@capacitor/cli": "6.0.0",
+    "@capacitor/cli": "^6.0.0",
     "@ionic/angular-toolkit": "^11.0.1",
     "@types/jasmine": "~5.1.0",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
+    "cordova-plugin-googlemaps": "^2.7.1",
     "cordova-plugin-telerik-imagepicker": "^2.3.6",
     "eslint": "^8.57.0",
     "eslint-plugin-import": "^2.29.1",
@@ -69,7 +75,8 @@
   "description": "An Ionic project",
   "cordova": {
     "plugins": {
-      "cordova-plugin-telerik-imagepicker": {}
+      "cordova-plugin-telerik-imagepicker": {},
+      "cordova-plugin-googlemaps": {}
     }
   }
 }
