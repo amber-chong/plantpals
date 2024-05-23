@@ -6,6 +6,7 @@ import { ModalController } from '@ionic/angular';
 import { ImagePicker } from '@awesome-cordova-plugins/image-picker/ngx';
 import { Storage } from '@ionic/storage';
 
+//==========icons============
 import { addIcons } from 'ionicons';
 import { close } from 'ionicons/icons';
 
@@ -15,8 +16,9 @@ import { close } from 'ionicons/icons';
   styleUrls: ['./individual.page.scss'],
   standalone: true,
   imports: [CommonModule, FormsModule, IonicModule],
-  providers: [ImagePicker]
+  providers: [ImagePicker], //cried because of this one line
 })
+
 export class IndividualPage implements OnInit {
   plantName = '';
   plantSeason = '';
@@ -24,21 +26,30 @@ export class IndividualPage implements OnInit {
   plantType = '';
   plantNotes = '';
   plantImage: string = '';
-  index: number | null = null; // For identifying the plant
+  x: number | null = null; //number | null = null is because itll get angry + a friend gave me this solution (im not looking into it its 9pm im going to bed)
+  y: number | null = null;
+  index: number | null = null;
 
   constructor(
-    private modalController: ModalController, private storage: Storage, private imagePicker: ImagePicker) {
+    private modalController: ModalController,
+    private storage: Storage,
+    private imagePicker: ImagePicker
+  ) {
     addIcons({ close });
   }
 
   async ngOnInit() {
     await this.storage.create();
+
+    //loads image
     if (this.index !== null) {
-      // Load plant image if it's an existing plant
-      this.plantImage = await this.storage.get(`plantImage_${this.index}`) || '';
+      this.plantImage =
+        (await this.storage.get(`plantImage_${this.index}`)) || ''; //either loads image or a string
     }
   }
 
+//=====================
+  //janky way of letting files be loaded
   imageSelected(files: FileList | null) {
     if (files && files.length > 0) {
       const file = files[0];
@@ -48,14 +59,17 @@ export class IndividualPage implements OnInit {
         if (typeof fileReader.result === 'string') {
           this.plantImage = fileReader.result;
           if (this.index !== null) {
-            this.storage.set(`plantImage_${this.index}`, this.plantImage);
+            //if its not nothing
+            this.storage.set(`plantImage_${this.index}`, this.plantImage); //different images
           }
         }
       };
-      fileReader.readAsDataURL(file); // This will produce a base64 string
+      fileReader.readAsDataURL(file); // base 64 string yay
     }
   }
 
+//=====================
+  //will be copied and pasted between individual, database and maps, no im not redoing it
   saveModal() {
     this.modalController.dismiss({
       plantName: this.plantName,
@@ -63,28 +77,34 @@ export class IndividualPage implements OnInit {
       scientificName: this.scientificName,
       plantType: this.plantType,
       plantNotes: this.plantNotes,
-      plantImage: this.plantImage
+      plantImage: this.plantImage,
+      x: this.x,
+      y: this.y,
     });
   }
 
+//=====================
   closeModal() {
-    this.modalController.dismiss(null); // Return null to indicate no changes
+    this.modalController.dismiss({
+      plantName: this.plantName,
+      plantSeason: this.plantSeason,
+      scientificName: this.scientificName,
+      plantType: this.plantType,
+      plantNotes: this.plantNotes,
+      plantImage: this.plantImage,
+      x: this.x,
+      y: this.y,
+    });
   }
   
+//=====================
+  //deletes it from the database, nothing fancy
   async deletePlant() {
     if (this.index !== null) {
       await this.storage.remove(`plantImage_${this.index}`);
     }
     this.modalController.dismiss({
-      isDeleted: true
+      isDeleted: true,
     });
   }
 }
-/*
-  async deletePlant(index: number) {
-    //deletes it
-    if (index !== -1) {
-      this.plants.splice(index, 1);
-      await this.storage.set('plants', this.plants);
-    }
-  }*/

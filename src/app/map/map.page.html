@@ -1,12 +1,15 @@
-<ion-content [fullscreen]="true">
+<ion-content>
   <h1>Garden Map</h1>
-  <img src="../assets/placeholderMap.PNG" />
-  <div class="databaseText">
-    <a href="/tabs/database">
-      <img src="../assets/database2.png" />
-    </a>
+  <div class="map-container">
+    <img src="assets/plantbed.jpg" class="map-image">
+    <ng-container *ngFor="let plant of plants; let i = index">    <!--loop-->
+      <div class="map-pin" [ngStyle]="pinPos(plant)">     <!--pin html-->
+        <ion-icon name="pin" color="danger"></ion-icon>
+        <div class="pin-popup">
+          <p>{{ plant.plantName }}</p>
+          <ion-button size="small" (click)="openPlant(i)">View</ion-button>
+        </div>
+      </div>
+    </ng-container>
   </div>
 </ion-content>
-<!--when clicking on map it pulls up image: https://stackoverflow.com/questions/74929048/display-image-by-click-somewhere-in-page
-also pulls notes from database and shows it beside
--->

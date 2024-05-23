@@ -20,6 +20,12 @@
   <ion-item>
     <ion-input name="notes" [(ngModel)]="plantNotes" placeholder="Notes"></ion-input>
   </ion-item>
+  <ion-item>
+    <ion-input name="x" [(ngModel)]="x" type="number" placeholder="X Coordinate (0-100%)"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input name="y" [(ngModel)]="y" type="number" placeholder="Y Coordinate (0-100%)"></ion-input>
+  </ion-item>
   <div class="saveButton">
     <img src="../../assets/save.png" (click)="saveModal()" />
   </div>
