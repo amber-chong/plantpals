@@ -28,8 +28,6 @@ export class LoginPage {
   async loginButton() {
     if (this.username && this.password) {
       this.modalController.dismiss(this.username);
-      //console.log(this.username)
-      //this.router.navigateByUrl('tabs/home');
     } else {
       console.log('Please fill in both username and password.');
     }

@@ -54,6 +54,7 @@ export class IndividualPage implements OnInit {
     }
   }
 
+  //saves modal and anything in it
   saveModal() {
     this.modalController.dismiss({
       plantName: this.plantName,
@@ -67,6 +68,7 @@ export class IndividualPage implements OnInit {
     });
   }
 
+  //closes modal
   closeModal() {
     this.modalController.dismiss();
   }
