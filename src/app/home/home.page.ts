@@ -30,7 +30,7 @@ export class HomePage implements OnInit {
   ngOnInit() {
     //stops it from running every time
     if (!this.welcomeExecuted) {
-      this.welcome();
+      //this.welcome();
       this.welcomeExecuted = true;
     }
   }

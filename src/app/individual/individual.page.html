@@ -1,7 +1,7 @@
 <ion-content>
   <ion-item>
     <ion-icon name="close" (click)="closeModal()" slot="end"></ion-icon>
-    <ion-label>New plant</ion-label>
+    <h2>New plant</h2>
   </ion-item>
   <input #fileInput type="file" accept="image/*" (change)="imageSelected(fileInput.files)">
   <img [src]="plantImage">

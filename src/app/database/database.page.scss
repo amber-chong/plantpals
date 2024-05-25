@@ -7,6 +7,21 @@ div {
   padding-left: 10px;
 }
 
-h1 {
+img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+ion-card-content {
+  white-space: nowrap;
   text-align: center;
+}
+
+ion-card {
+  margin-bottom: 0;
+}
+
+.addButton {
+  margin: 20px; 
 }
