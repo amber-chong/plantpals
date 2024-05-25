@@ -3,18 +3,21 @@
   <ion-grid>
     <ion-row>
       <ion-col size="6">
-        <ion-card (click)="addPlant()">
-          <img src="../assets/add.png" class="addButton"/>
-        </ion-card>
+          <ion-card (click)="addPlant()">
+            <img src="../assets/add.png" class="addButton"/>
+            <ion-card-content class="text">Add plant</ion-card-content>
+          </ion-card>
       </ion-col>
+
       <ng-container *ngFor="let plant of plants; let i = index">
         <ion-col size="6">
-          <ion-card (click)="openPlantModal(i)">
-            <img [src]="plant.plantImage || '../assets/placeholderSquare.png'">
-            <ion-card-content>{{ plant.plantName }}</ion-card-content>
-          </ion-card>
+            <ion-card (click)="openPlantModal(i)" class="otherDataIg">
+              <img [src]="plant.plantImage || '../assets/placeholderSquare.png'">
+              <ion-card-content>{{ plant.plantName }}</ion-card-content>
+            </ion-card>
         </ion-col>
       </ng-container>
+
     </ion-row>
   </ion-grid>
 </ion-content>

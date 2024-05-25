@@ -9,6 +9,7 @@ import { NavController } from '@ionic/angular';
 import { WelcomePage } from '../welcome/welcome.page';
 import { LoginPage } from '../login/login.page';
 import { RegisterPage } from '../register/register.page';
+import { PlantDatabaseService } from '../plant-database.service';
 
 @Component({
   selector: 'app-home',
@@ -20,19 +21,24 @@ import { RegisterPage } from '../register/register.page';
 export class HomePage implements OnInit {
   username = '';
   welcomeExecuted = false;
+  plants: any[] = [];
 
   constructor(
     private navCtrl: NavController,
     private modalController: ModalController,
-    private router: Router
+    private router: Router,
+    private plantDatabaseService: PlantDatabaseService
   ) {}
 
-  ngOnInit() {
+  async ngOnInit() {
     //stops it from running every time
     if (!this.welcomeExecuted) {
       //this.welcome();
       this.welcomeExecuted = true;
     }
+
+    await this.plantDatabaseService.init();
+    this.plants = this.plantDatabaseService.getPlants();
   }
 
   //creates modal
@@ -48,10 +54,5 @@ export class HomePage implements OnInit {
     });
 
     return await modal.present();
-  }
-  reminderClick() {
-    //sends user to database (separate page)
-    let calendar = '/calendar';
-    this.router.navigateByUrl(calendar);
   }
 }

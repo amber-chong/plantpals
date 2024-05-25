@@ -1,6 +1,14 @@
 * {
-  --ion-background-color: #e5d9c3;
   color: #3d2200;
+  image-rendering: pixelated;
+}
+ion-item {
+  --background: none;
+}
+ion-list {
+  background-color: rgba(0, 0, 0, 0);
+  margin-top: -125px;
+  
 }
 
 ion-label {
@@ -10,22 +18,122 @@ ion-label {
 
 ion-input {
   text-align: center;
-  margin: 20px;
 }
 
-.placeholderImg {
-  width: 70%;
+ion-textarea {
+  width: 225px;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 40px;
-  padding-bottom: 50px;
+}
+
+.buttons {
+  padding-top: 15px;
+  position: relative;
+}
+
+.deleteButton {
+  margin-left: 75px;
+}
+
+.delText {
+  position: absolute;
+  top: 35%;
+  left: 32.5%;
+  transform: translate(-50%, -50%);
+}
+
+.saveText {
+  position: absolute;
+  top: 35%;
+  left: 67.5%;
+  transform: translate(-50%, -50%);
 }
 
 .saveButton {
-  width: 40%;
+  margin-left: 35px;
+}
+
+.closeButton {
+  scale: 80%;
+  margin-bottom: 2px;
+}
+
+.header {
+  padding-right: 20px;
+  margin-right: 20px;
+  padding-top: 25px;
+}
+
+.inputFields {
+  scale: 90%;
+}
+
+.bigOne {
+  z-index: 1;
+  margin-top: 61px;
+}
+
+.plantName1 {
+  margin-top: 130px;
+}
+
+.literallyEverythingElse {
+  margin-top: 10px;
+}
+
+.season {
+  margin-top: -10px;
+}
+
+.science {
+  margin-top: -5px;
+}
+
+.type {
+  margin-top: -3px;
+}
+
+.notes {
+  margin-top: -5px;
+}
+
+.x {
+  margin-top: 93px;
+}
+
+.y {
+  margin-top: -2px;
+}
+
+.bgImage {
+  z-index: -1;
+  scale: 325%;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+h2 {
+  margin-left: auto;
+  margin-top: 6px;
+  font-size: 18px;
+}
+
+input {
+  scale: 50%;
+  margin-left: 20px;
+  margin-top: -10px;
+}
+
+.imageE {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 40px;
+  width: 136px;
+  height: 136px;
+  margin-top: -14px;
 }

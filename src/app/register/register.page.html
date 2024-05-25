@@ -1,6 +1,5 @@
-<ion-header [translucent]="true"> </ion-header>
-
 <ion-content>
+  <div class="bubble">
   <div class="buttons">
     <img
       src="../../assets/plantpals1.PNG"
@@ -31,9 +30,10 @@
     </ion-item>
   </div>
   <ion-checkbox labelPlacement="end" [(ngModel)]="agreeTerms"
-    >I agree to the terms and conditions</ion-checkbox
+    >I agree to the T&Cs</ion-checkbox
   >
   <ion-button expand="block" color="none" (click)="loginButton()"
     >Login</ion-button
   >
+</div>
 </ion-content>

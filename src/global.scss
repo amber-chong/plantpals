@@ -34,9 +34,33 @@
 
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import '@ionic/angular/css/palettes/dark.system.css';
+@import "@ionic/angular/css/palettes/dark.system.css";
+* {
+    color: #3d2200;
+}
 
-h1, h2 {
-    font-family: 'customTitle';
-    text-align: center;
+h1,
+h2 {
+  font-family: "customTitle";
+  text-align: center;
+}
+
+.bubble {
+  background-color: rgba(247, 252, 220, 0.5);
+  width: 75%;
+  position: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 150px;
+  padding-bottom: 20px;
+  padding-top: 5px;
+  border-radius: 20px;
+}
+
+ion-content {
+  --background: none;
+  background: url("assets/grass.png");
+  background-size: 250px 250px;
+  background-position: left top;
+  background-repeat: repeat;
 }

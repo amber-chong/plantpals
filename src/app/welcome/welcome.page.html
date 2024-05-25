@@ -1,19 +1,26 @@
-<ion-content [fullscreen]="true">
-  <img src="../../assets/plantpals1.PNG" alt="Logo" class="logo" width="75%" />
-
-  <div class="buttons">
-    <img src="../assets/loginButton.png" (click)="login()" />
+<ion-content class="screen">
+  <div class="bubble">
     <img
-      src="../assets/registerButton.png"
-      (click)="register()"
-      class="register"
+      src="../../assets/plantpals1.PNG"
+      alt="Logo"
+      class="logo"
+      width="75%"
     />
-  </div>
 
+    <div class="buttons">
+      <img src="../assets/loginButton.png" (click)="login()" />
+      <img
+        src="../assets/registerButton.png"
+        (click)="register()"
+        class="register"
+      />
+    </div>
+  </div>
   <div class="git">
     <ion-button fill="clear" href="https://github.com/amber-chong/plantpals">
       <img src="../assets/github.png" width="15%" />
     </ion-button>
   </div>
+
   <p>© Amber Chong 2024</p>
 </ion-content>

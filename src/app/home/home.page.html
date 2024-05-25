@@ -1,6 +1,8 @@
 <ion-content [fullscreen]="true">
-  <h1>Your garden</h1>
-  <hr />
+  <div class="header">
+    <h1>Your garden</h1>
+  </div>
+
   <!--{{ username }}-->
   <div class="database">
     <a href="/tabs/database">
@@ -8,16 +10,15 @@
     </a>
   </div>
   <div class="plantsList">
-    <hr />
-    <div class="plantsText">
-      <h4>plants list</h4>
-      <p><br />- Strawberries<br />- Lavender<br />-</p>
-    </div>
-    <hr />
-  </div>
-  <div class="reminders">
-    <a href="/tabs/calendar">
-      <img src="../assets/reminders.png" />
-    </a>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Current plants</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ul>
+          <li *ngFor="let plant of plants">{{ plant.plantName }}</li>
+        </ul>
+      </ion-card-content>
+    </ion-card>
   </div>
 </ion-content>

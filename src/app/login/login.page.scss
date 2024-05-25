@@ -1,11 +1,17 @@
 * {
-  --ion-background-color: #3d2200;
+  image-rendering: pixelated;
+}
+
+ion-content {
+  --background: none;
+  background: url('../../assets/forheksedd.jpg') no-repeat;
+  background-size: cover;
 }
 
 img {
   display: block;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 ion-item {
@@ -16,10 +22,12 @@ ion-item {
   background-repeat: no-repeat;
   padding: 25px;
   text-align: center;
+  scale: 85%;
 }
 
 ion-button {
   padding: 20px;
+  font-family: 'customTitle';
 }
 
 ion-input {

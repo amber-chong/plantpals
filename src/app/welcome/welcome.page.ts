@@ -8,7 +8,6 @@ import { LoginPage } from '../login/login.page';
 import { RegisterPage } from '../register/register.page';
 import { addIcons } from 'ionicons';
 import { logoGithub } from 'ionicons/icons';
-import { HomePage } from '../home/home.page';
 
 @Component({
   selector: 'app-welcome',
@@ -26,7 +25,8 @@ export class WelcomePage implements OnInit {
     addIcons({ logoGithub }); //adds github logo for this project's repo
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   //creates modal
   async login() {

@@ -1,11 +1,13 @@
-* {
-  --ion-background-color: #3d2200;
+ion-content {
+  --background: none;
+  background: url('../../assets/forheksedd.jpg') no-repeat;
+  background-size: cover;
 }
 
 .logo {
   display: block;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .buttons {
@@ -13,8 +15,8 @@
   position: center;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 20px;
-  width: 75%;
+  margin-top: 30px;
+  width: 70%;
 }
 
 .register {

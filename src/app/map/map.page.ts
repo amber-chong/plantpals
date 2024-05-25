@@ -38,7 +38,6 @@ export class MapPage implements OnInit {
   };
 
   plants: any[] = [];
-  //chart: any;
 
   constructor(
     private modalController: ModalController,

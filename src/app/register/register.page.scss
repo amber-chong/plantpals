@@ -1,11 +1,18 @@
 * {
-  --ion-background-color: #3d2200;
+  image-rendering: pixelated;
+}
+
+ion-content {
+  --background: none;
+  background: url('../../assets/forheksedd.jpg') no-repeat;
+  background-size: cover;
 }
 
 img {
   display: block;
   margin: 0 auto;
-  margin-top: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 ion-item {
@@ -16,6 +23,8 @@ ion-item {
   background-repeat: no-repeat;
   padding: 25px;
   text-align: center;
+  scale: 85%;
+  margin-top: -20px;
 }
 
 ion-input {
@@ -25,13 +34,27 @@ ion-input {
 
 ion-checkbox {
   --checkbox-background-checked: #8c7c5c;
-  padding: 30px;
+  padding: 10px;
   padding-top: 20px;
-  font-size: 9px;
-  color: #8c7c5c;
+  padding-left: 50px;
+  font-size: 11px;
+  color: #3d2200;
+  word-wrap: break-word;
 }
 
 ion-checkbox::part(container) {
   border-radius: 6px;
-  border: 2px solid #8c7c5c;
+  border: 2px solid #3d2200;
+}
+
+.bubble {
+  margin-top: 100px;
+}
+
+ion-button {
+  font-family: 'customTitle';
+}
+
+input[type='file'] {
+  opacity:0    
 }
