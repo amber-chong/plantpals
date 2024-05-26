@@ -51,6 +51,11 @@ export const routes: Routes = [
           import('../individual/individual.page').then((m) => m.IndividualPage),
       },
       {
+        path: 'credits',
+        loadComponent: () =>
+          import('../credits/credits.page').then((m) => m.CreditsPage),
+      },
+      {
         path: '',
         redirectTo: '/tabs/home',
         pathMatch: 'full',
