@@ -1,23 +1,22 @@
 <ion-content>
   <h1>Garden Map</h1>
   <div class="map-container">
-    <img src="assets/plantbed.jpg" class="map-image" />
+    <img src="../../assets/gardenBed.png" class="map-image" />
     <ng-container *ngFor="let plant of plants; let i = index">
       <!--loop-->
       <div class="map-pin" [ngStyle]="pinPos(plant)" (click)="updateChartData(i)">
         <!--pin html-->
-        <ion-icon name="pin" color="danger"></ion-icon>
+        <img src="../../assets/sprout.png">
         <div class="pin-popup">
           <p>{{ plant.plantName }}</p>
-          <ion-button size="small" (click)="openPlant(i)">View</ion-button>
+          <!--<ion-button size="small" (click)="openPlant(i)" class="popup">View</ion-button>-->
         </div>
       </div>
     </ng-container>
   </div>
-  <a href="/tabs/database">
+  <a href="/tabs/database" class="databaseButton">
     <button>Database</button>
   </a>
-  <ion-card>
-    <canvas #plantGraph height="250"></canvas>
-  </ion-card>
+  <img class="graphBg" src="../../assets/chartTwo.png">
+  <canvas #plantGraph height="90"></canvas>
 </ion-content>

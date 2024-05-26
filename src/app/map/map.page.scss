@@ -3,9 +3,12 @@
   image-rendering: pixelated;
 }
 
-img {
+.map-image {
   width: 100%;
   padding: 10px;
+  height: auto;
+  z-index: 0;
+  margin-top: 20px;
 }
 
 h1 {
@@ -17,15 +20,12 @@ h1 {
   position: relative;
 }
 
-.map-image {
-  width: 100%;
-  height: auto;
-}
-
 .map-pin {
   position: absolute;
   transform: translate(-50%, -100%);
   cursor: pointer;
+  scale: 175%;
+  z-index: 0;
 }
 
 .map-pin ion-icon {
@@ -37,13 +37,47 @@ h1 {
   position: absolute;
   top: -40px;
   left: -10px;
-  background: white;
+  background-color: rgba(247, 252, 220, 0.8);
   padding: 5px;
-  border: 1px solid #ccc;
   border-radius: 4px;
+  z-index: 1;
+  font-size: 10px;
 }
 
 .map-pin:hover .pin-popup {
   display: block;
 }
 
+.popup {
+  padding-top: 100px;
+  width: 50px;
+  height: 10px;
+  font-size: 10px;
+}
+
+canvas {
+  --background: none;
+  width: 350px;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  z-index: 1;
+}
+
+.graphBg {
+  position: absolute;
+  margin: 15px;
+  margin-top: -3px;
+  width: 375px;
+  z-index: 0;
+}
+
+button {
+  background: none;
+  position: absolute;
+  z-index: 1;
+  margin-top: -60px;
+  padding-left: 140px;
+  font-size: 20px;
+}

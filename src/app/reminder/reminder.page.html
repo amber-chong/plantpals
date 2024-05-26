@@ -1,25 +1,21 @@
 <ion-content [fullscreen]="true">
   <h2>Reminder</h2>
   <div class="reminder">
-    <ion-item>
-      <ion-input
-        type="text"
-        maxlength="25"
-        [(ngModel)]="newReminder.text"
-        placeholder="Reminder Text"
-      ></ion-input>
-    </ion-item>
+    <img src="../../assets/blank.png" class="remBg">
+    <div class="everythingElse">
+      <ion-item>
+        <ion-input type="text" maxlength="25" [(ngModel)]="newReminder.text" placeholder="Reminder Text"
+          class="reminderText"></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-datetime
-        presentation="date-time"
-        [preferWheel]="true"
-        display-format="YYYY-MM-DD hh:mm"
-        [(ngModel)]="newReminder.datetime"
-      ></ion-datetime>
-    </ion-item>
+      <ion-item>
+        <ion-datetime presentation="date-time" [preferWheel]="true" display-format="YYYY-MM-DD hh:mm"
+          [(ngModel)]="newReminder.datetime"></ion-datetime>
+      </ion-item>
+    </div>
   </div>
   <div class="saveButton">
-    <img src="../../assets/save.png" (click)="closeReminder()" />
+    <img src="../../assets/bigButton.png" (click)="closeReminder()" />
+    <p class="saveText">Save</p>
   </div>
 </ion-content>

@@ -23,6 +23,7 @@ ion-card {
   height: 150px;
   margin-left: auto;
   margin-right: auto;
+  scale: 90%;
 }
 
 
@@ -40,4 +41,21 @@ h1 {
   height: 107px;
   margin-left: 34px;
   margin-top: 9px;
+}
+
+ion-grid {
+  padding-top: 10px;
+  padding-right: 5px;
+}
+
+.dataBack {
+  background-color: rgba(247, 252, 220, 0.5);
+  width: 90%;
+  position: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  padding-bottom: 20px;
+  padding-top: 5px;
+  border-radius: 20px;
 }

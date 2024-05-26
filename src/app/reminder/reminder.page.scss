@@ -1,27 +1,66 @@
 * {
-  --ion-background-color: #e5d9c3;
   color: #3d2200;
+  image-rendering: pixelated;
 }
 
 .reminder {
   padding-top: 100px;
 }
+
 .saveButton {
   width: 40%;
   display: block;
+  margin-left: 143px;
+  margin-right: auto;
+  padding-top: 28px;
+  z-index: 2;
+}
+
+.saveText {
+  z-index: 3;
+  position: absolute;
+  margin-left: 28px;
+  margin-top: -45px;
+}
+
+img.remBg {
+  z-index: 0;
+  position: relative;
+  scale: 350%;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 10px;
+  display: block;
+  margin-top: 125px;
 }
 
 ion-item {
-  padding: 15px;
+  --background: none;
+  z-index: 1;
+  scale: 75%;
+  width: 382px;
+  padding-left: 18px;
 }
 
 ion-datetime {
-  padding-top: 20px;
+  --background: none;
+  z-index: 1;
+  margin-top: -3px;
 }
 
-h1 {
+.reminderText {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-top: 5px;
+  z-index: 1;
+}
+
+h2 {
   text-align: center;
+  padding: 10px;
+  z-index: 1;
+}
+
+.everythingElse {
+  margin-top: -169px;
 }

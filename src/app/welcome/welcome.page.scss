@@ -1,6 +1,6 @@
 ion-content {
   --background: none;
-  background: url('../../assets/forheksedd.jpg') no-repeat;
+  background: url("../../assets/forheksedd.jpg") no-repeat;
   background-size: cover;
 }
 
@@ -15,12 +15,12 @@ ion-content {
   position: center;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 30px;
+  margin-top: 20px;
   width: 70%;
 }
 
 .register {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .git {
@@ -34,5 +34,5 @@ p {
   font-size: 8px;
   text-align: center;
   padding-top: 290px;
-  color: #8C7C5C;
+  color: #8c7c5c;
 }

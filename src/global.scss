@@ -36,13 +36,14 @@
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
 * {
-    color: #3d2200;
+    color: #3d1400;
 }
 
 h1,
 h2 {
   font-family: "customTitle";
   text-align: center;
+  color: #3d1400;
 }
 
 .bubble {
@@ -59,8 +60,7 @@ h2 {
 
 ion-content {
   --background: none;
-  background: url("assets/grass.png");
-  background-size: 250px 250px;
-  background-position: left top;
-  background-repeat: repeat;
+  background: url('assets/forheksedd.jpg') no-repeat;
+  background-size: cover;
+  opacity: 90%;
 }

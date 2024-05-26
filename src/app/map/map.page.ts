@@ -31,7 +31,7 @@ export class MapPage implements OnInit {
         label: 'Plant Growth',
         data: this.plantRate,
         fill: false,
-        borderColor: 'rgb(75, 192, 192)',
+        borderColor: '#793f19',
         tension: 0.1
       }]
     },

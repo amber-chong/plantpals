@@ -3,7 +3,7 @@
   <div class="bigOne">
     <div class="header">
       <ion-item>
-        <h2>New plant</h2>
+        <h2>Plant</h2>
         <img src="../../assets/x.png" (click)="closeModal()" class="closeButton" />
       </ion-item>
     </div>
@@ -33,10 +33,10 @@
         </ion-item>
       </div>
       <ion-item class="x">
-        <ion-input name="x" [(ngModel)]="x" type="number" placeholder="X Coordinate (0-100%)"></ion-input>
+        <ion-input name="x" [(ngModel)]="x" type="number" placeholder="Location (x)"></ion-input>
       </ion-item>
       <ion-item class="y">
-        <ion-input name="y" [(ngModel)]="y" type="number" placeholder="Y Coordinate (0-100%)"></ion-input>
+        <ion-input name="y" [(ngModel)]="y" type="number" placeholder="Location (y)"></ion-input>
       </ion-item>
       <div class="buttons">
         <img src="../../assets/bigButton.png" (click)="deletePlant()" class="deleteButton">

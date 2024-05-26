@@ -1,16 +1,18 @@
 <ion-content [fullscreen]="true">
   <h1>Calendar</h1>
-  <ion-item>
+  <ion-item class="calendar">
     <ion-datetime displayFormat="DD/MM/YYYY"></ion-datetime>
+    <img src="../../assets/welcomeBg.png" class="calBg">
   </ion-item>
 
-  <div class="saveButton">
-    <img src="../../assets/reminder.png" (click)="addReminder()" />
+  <div class="reminderButtonMain">
+    <img src="../../assets/bigButton.png" (click)="addReminder()" class="reminderButton">
+    <p class="remText">Add</p>
   </div>
 
   <ion-list>
     <!--loop for reminders-->
-    <ion-item *ngFor="let reminder of reminders">
+    <ion-item *ngFor="let reminder of reminders" class="remList">
       <!--formatting-->
       <ion-label>{{ reminder.text }}</ion-label>
       <ion-label>{{ reminder.datetime | date:'YYYY-MM-DD | hh:mm' }}</ion-label>
