@@ -39,6 +39,7 @@
     "chart.js": "^4.4.3",
     "cordova-android": "13.0.0",
     "ionicons": "^7.2.1",
+    "jetifier": "^2.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.2"
@@ -59,7 +60,6 @@
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "cordova-ios": "^7.1.0",
-    "cordova-plugin-googlemaps": "^2.7.1",
     "cordova-plugin-googlemaps-sdk": "github:mapsplugin/cordova-plugin-googlemaps-sdk",
     "cordova-plugin-telerik-imagepicker": "^2.3.6",
     "eslint": "^8.57.0",
@@ -78,8 +78,7 @@
   "description": "An Ionic project",
   "cordova": {
     "plugins": {
-      "cordova-plugin-telerik-imagepicker": {},
-      "cordova-plugin-googlemaps": {}
+      "cordova-plugin-telerik-imagepicker": {}
     }
   }
 }
